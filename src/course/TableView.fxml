@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<FlowPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="724.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="course.TableViewController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="428.0" prefWidth="732.0" spacing="15.0" style="-fx-background-color: #DDA0DD;">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER" prefHeight="257.0" prefWidth="724.0" spacing="10.0">
+               <children>
+                  <GridPane prefHeight="195.0" prefWidth="257.0" style="-fx-background-color: #87CEEB;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="100.0" text="ID : " textFill="#4c6bad">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Name : " textFill="#4c6bad" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Grade :  " textFill="#4c6bad" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Hours : " textFill="#4c6bad" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="TextFeiledID" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #FFF0F5;" GridPane.columnIndex="1" />
+                        <TextField fx:id="TextFeiledName" style="-fx-background-color: #FFF0F5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="TextFeiledHours" style="-fx-background-color: #FFF0F5;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="TextFeiledGrade" style="-fx-background-color: #FFF0F5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+                  <TableView fx:id="TableView" prefHeight="206.0" prefWidth="442.0" style="-fx-font-size: 14px;">
+                    <columns>
+                      <TableColumn fx:id="tcID" prefWidth="110.0" text="ID" />
+                      <TableColumn fx:id="tcName" prefWidth="122.0" text=" Name" />
+                        <TableColumn fx:id="tcHours" minWidth="0.0" prefWidth="106.0" text="Hours" />
+                        <TableColumn fx:id="tcGrade" prefWidth="118.0" text=" Grade" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="74.0" prefWidth="692.0" spacing="10.0" style="-fx-background-color: #90EE90;">
+               <children>
+                <Button fx:id="buttonShow" mnemonicParsing="false" onAction="#buttonShowHandle" prefHeight="37.0" prefWidth="117.0" stylesheets="@Style.css" text="Show" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonAdd" mnemonicParsing="false" onAction="#buttonAddHandle" prefHeight="37.0" prefWidth="111.0" stylesheets="@../semester/Style.css" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonUpdate" mnemonicParsing="false" onAction="#buttonUpdateHandle" prefHeight="37.0" prefWidth="113.0" stylesheets="@../semester/Style.css" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#buttonDeleteHandle" prefHeight="37.0" prefWidth="113.0" stylesheets="@Style.css" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonReset" mnemonicParsing="false" onAction="#buttonResetHandle" prefHeight="37.0" prefWidth="123.0" stylesheets="@style.css" text="Reset" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="buttonGoBack" mnemonicParsing="false" onAction="#buttonBackHandle" prefHeight="37.0" prefWidth="139.0" style="-fx-background-color: #00F#008B8BFFF;" stylesheets="@../student/style.css" text="Go back" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="308.0" style="-fx-background-color: #B0C4DE;" text="We come to page Course" textFill="#727840">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>
